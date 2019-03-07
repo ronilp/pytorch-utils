@@ -1,3 +1,8 @@
+# File: dataset_utils.py
+# Author: Ronil Pancholia
+# Date: 3/7/19
+# Time: 2:41 AM
+
 import os
 import torch
 import multiprocessing
@@ -32,4 +37,4 @@ def load_datasets_from_csv(DatasetClass, transforms=None):
 
 def load_testset_from_csv(DatasetClass, transforms=None):
     datasets = {x: DatasetClass(config.DATA_DIR, x, transforms) for x in ['test']}
-    return load_datasets_from_csv(DatasetClass, transforms, datasets)
+    return load_testset(DatasetClass, transforms, datasets)

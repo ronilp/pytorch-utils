@@ -1,3 +1,8 @@
+# File: training_functions.py
+# Author: Ronil Pancholia
+# Date: 3/7/19
+# Time: 2:46 AM
+
 import sys
 import torch
 from tqdm import tqdm
