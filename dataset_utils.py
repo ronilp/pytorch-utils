@@ -24,6 +24,7 @@ def load_testset(DatasetClass, transforms=None, datasets=None):
     dataset_sizes = {x: len(datasets[x]) for x in ['test']}
     return dataset_loaders, dataset_sizes
 
+
 def load_datasets_from_csv(DatasetClass, transforms=None):
     datasets = {x: DatasetClass(config.DATA_DIR, x, transforms) for x in ['train', 'val']}
     return load_datasets(DatasetClass, transforms, datasets)
