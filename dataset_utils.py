@@ -11,7 +11,7 @@ import config
 
 
 def load_datasets(DatasetClass, transforms=None, datasets=None):
-    if datasets is not None:
+    if datasets is None:
         datasets = {x: DatasetClass(os.path.join(config.DATA_DIR, x), x, transforms) for x in ['train', 'val']}
     dataset_loaders = {
         x: torch.utils.data.DataLoader(datasets[x], batch_size=config.BATCH_SIZE, shuffle=True,
@@ -21,7 +21,7 @@ def load_datasets(DatasetClass, transforms=None, datasets=None):
 
 
 def load_testset(DatasetClass, transforms=None, datasets=None):
-    if datasets is not None:
+    if datasets is None:
         datasets = {x: DatasetClass(os.path.join(config.DATA_DIR, x), x, transforms) for x in ['test']}
     dataset_loaders = {
         x: torch.utils.data.DataLoader(datasets[x], batch_size=config.BATCH_SIZE * 4, shuffle=False,
